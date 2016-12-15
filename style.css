@@ -1,0 +1,14 @@
+/* style settings for Google map */
+	#map-canvas
+	{
+		width : 1200px; 	/* map width */
+		height: 600px;	/* map height */
+		margin-top: 20px;
+
+	}
+	#mapbod
+	 {
+		display: flex;
+		justify-content: center;
+
+	}
