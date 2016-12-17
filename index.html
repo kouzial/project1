@@ -7,6 +7,8 @@
     <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -41,12 +43,47 @@
     <div class="row">
         <div class="col-md-8" id="mapbod">
 
+
+  <nav>
+    <div class="nav-wrapper">
+    <a href="#" class="brand-logo center customlogo">D-TOUR</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+
+      <div id = "sidebar" class="fixed-action-btn horizontal click-to-toggle">
+        <a id = "newbar" class="btn-floating btn-large red">
+          <i class="material-icons">M</i>
+        </a>
+        <ul>
+          <li class="smallbar"><a class="btn-floating red"><i class="material-icons icon-thing">I</i></a></li>
+          <li class="smallbar"><a class="btn-floating yellow darken-1"><i class="material-icons icon-thing">A</i></a></li>
+          <li class="smallbar"><a class="btn-floating green"><i class="material-icons icon-thing">B</i></a></li>
+          <li class="smallbar"><a class="btn-floating blue"><i class="material-icons icon-thing">X</i></a></li>
+        </ul>
+      </div>
+
+      </ul>
+    </div>
+  </nav>
+ <div class="input-group">
+ <span class="input-group-addon"><i class="fa fa-location-arrow" aria-hidden="true"></i></i></span>
+ <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+ <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></i></span>
+</div>
+<div class="row">
+<div class="col-md-8" id="mapbod">
+    <body onload="Init()"> <!-- Call the JS method 'Init()' to display the google map when the web page is displayed (onload event) -->
+  <!-- Dislay Google map here -->
+  <div id='map-canvas' ></div>
+</div>
+>>>>>>> 8e61e23d891225f7f7ddba5a5245ad97f803a07d
+
             <body onload="Init()">
                 <!-- Call the JS method 'Init()' to display the google map when the web page is displayed (onload event) -->
                 <!-- Dislay Google map here -->
                 <div id='map-canvas'></div>
         </div>
 
+<<<<<<< HEAD
 
         <div class="col-md-4 austininput">
             <div class="thumbnail">
@@ -71,6 +108,71 @@
     </footer>
 
     <script type="text/javascript" src="jav.js"></script>
+=======
+  <div class="col-md-4 austininput">
+    <div class="thumbnail">
+      <img src="austinskyline.jpg" alt="austin">
+      <div class="caption">
+        <h3>Report a Crime</h3>
+
+        <div class="row">
+    <form class="col s12">
+      <div class="row">
+       <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">First Name</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Last Name</label>
+        </div>
+      </div>
+      <div class="row">
+       <div class="input-field col s6">
+          <input id="last_name" type="text" class="validate">
+          <label for="last_name">Type of Crime</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Address</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col s12">
+
+        </div>
+      </div>
+    </form>
+  </div>
+
+
+
+        <p><a href="#" class="btn btn-default" role="button">Submit</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+ <footer>
+   <div class="footer-nav">
+
+   <div>
+     © 2016 D-Tour
+   </div>
+
+   </div>
+
+ </footer>
+>>>>>>> 8e61e23d891225f7f7ddba5a5245ad97f803a07d
 
     </body>
 

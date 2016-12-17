@@ -31,6 +31,7 @@ $(document).ready(function() {
 });
 
 
+
 var map; // Google map object (global variable)
 
 // Initialize and display a google map
