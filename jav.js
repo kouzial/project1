@@ -22,6 +22,8 @@
 		});
 
 
+		$(document).on(click)
+
 	var map;	// Google map object (global variable)
 	
 	// Initialize and display a google map
