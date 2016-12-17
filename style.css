@@ -1,3 +1,4 @@
+
 /* style settings for Google map */
 	#map-canvas
 	{
@@ -12,3 +13,19 @@
 		justify-content: center;
 
 	}
+	.customlogo{
+		font-family: 'Arbutus', cursive;
+		margin-right:25px;
+	}
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+  .austininput{
+  	padding-top:17px;
+  }
