@@ -8,8 +8,16 @@
 		          "$$app_token" : "nx6iorDFMna26v0zqNiSfz0ZK"
 		        }
 		    }).done(function(data){
-		      alert("Retrieved " + data.length + " records from the dataset!");
-		      console.log(data);
+		    console.log(data);
+		    for (var i = 0; i < data.length; i++) {
+		    	var address = data[i].address + " Austin, TX";
+		    	// Run address through geocoder
+		    	var converter = new google.maps.Geocoder;
+		    	converter.geocode({address:address},function(res) {
+		    		console.log(res);
+		    	});
+
+		    }
 		    });
 		});
 
