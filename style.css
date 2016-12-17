@@ -1,3 +1,4 @@
+
 /* style settings for Google map */
 	#map-canvas
 	{
@@ -11,4 +12,8 @@
 		display: flex;
 		justify-content: center;
 
+	}
+	.customlogo{
+		font-family: 'Arbutus', cursive;
+		margin-right:25px;
 	}

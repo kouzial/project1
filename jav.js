@@ -8,7 +8,7 @@
 		          "$$app_token" : "nx6iorDFMna26v0zqNiSfz0ZK"
 		        }
 		    }).done(function(data){
-		      alert("Retrieved " + data.length + " records from the dataset!");
+		     
 		      console.log(data);
 		    });
 		});
