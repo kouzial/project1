@@ -5,7 +5,7 @@ $(document).ready(function() {
         url: "https://data.policefoundation.org/resource/iibt-hvrs.json",
         type: "GET",
         data: {
-            "$limit": 5,
+            "$limit": 500,
             "$$app_token": "nx6iorDFMna26v0zqNiSfz0ZK"
         }
     }).done(function(data) {
@@ -19,11 +19,21 @@ $(document).ready(function() {
                 url: resultsAddressURL,
                 type: "GET",
                 data: {
-                    "$limit": 5,
+                    "$limit": 500,
                 }
             }).done(function(data) {
                 var gresults = data;
-								console.log(gresults);
+				// for loop for finding coordinates
+					for(var i = 0; i < gresults.results.length; i++){
+						// console.log(gresults);
+						var coords = gresults.results[i].geometry.location;
+						console.log(coords);
+						var marker = new google.maps.Marker({
+							position: coords,
+							map: map
+						})
+
+					}
             });
 
         }
@@ -37,12 +47,12 @@ var map; // Google map object (global variable)
 // Initialize and display a google map
 function Init() {
     // Create a Google coordinate object for where to center the map
-    var latlngDC = new google.maps.LatLng(30.2672, -97.7431); // Coordinates of Washington, DC (area centroid)
+    var latlngATX = new google.maps.LatLng(30.2672, -97.7431); // Coordinates of Austin, TX (area centroid)
 
     // Map options for how to display the Google map
     var mapOptions = {
         zoom: 12,
-        center: latlngDC
+        center: latlngATX
     };
 
     // Show the Google map in the div with the attribute id 'map-canvas'.
