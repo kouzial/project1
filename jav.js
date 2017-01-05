@@ -1,68 +1,27 @@
-// Initialize firebase
-
-var config = {
-    apiKey: "AIzaSyCrqXg8Tlrap751-MiLRymevQmJErM8K64",
-    authDomain: "project-1-database-e557d.firebaseapp.com",
-    databaseURL: "https://project-1-database-e557d.firebaseio.com",
-    storageBucket: "project-1-database-e557d.appspot.com",
-    messagingSenderId: "156136916107"
-  };
-  firebase.initializeApp(config);
-
-// Create a variable to reference the database
-
-var database = firebase.database();
-
-
- $("#bouton").on("click", function() {
-        event.preventDefault()
-
-   		var first_name = $("#first_name").val().trim();
-		var last_name = $("#last_name").val().trim();
-		var password = $("#password").val().trim();
-		var email = $("#email").val().trim();
-		var crime = $("#crime").val().trim();
-       $(".validate").val("");
-
-        database.ref().push({
-          first_name: first_name,
-          last_name: last_name,
-          password: password,
-          email: email,
-          crime: crime
-        });
-
-
-      });
-
-
-database.ref().on("child_added", function(snapshot) {
-
-	var first_name = $("#first_name").val().trim();
-	var last_name = $("#last_name").val().trim();
-	var password = $("#password").val().trim();
-	var email = $("#email").val().trim();
-	var crime = $("#crime").val().trim();
-	 // Handle the errors
-    }, function(errorObject) {
-     console.log("Errors handled: " + errorObject.code);
-    });
-
-
 // Ajax
+
+
 
 $(document).ready(function() {
     $.ajax({
         url: "https://data.policefoundation.org/resource/iibt-hvrs.json",
         type: "GET",
         data: {
-            "$limit": 5,
+            "$limit": 50,
             "$$app_token": "nx6iorDFMna26v0zqNiSfz0ZK"
         }
     }).done(function(data) {
         console.log(data);
         for (var i = 0; i < data.length; i++) {
             var address = data[i].address;
+            var crime = data[i].crime_type;
+            	for (var j = 0; j < crime.length; j++){
+            		if(crime === 'theft'){
+            			theftData.push();
+            		}
+            	}
+           // console.log(crime);
+           console.log(theftData);
             var geoCodeAddress = address.split(' ').join('+');
             // Run address through geocoder
             var resultsAddressURL = "https://maps.googleapis.com/maps/api/geocode/json?address=" + geoCodeAddress + "+Austin,+TX" + "&key=AIzaSyAe5ZLl9i8S1etqv9W99vMBV4LAW2vkkZI";
@@ -70,32 +29,39 @@ $(document).ready(function() {
                 url: resultsAddressURL,
                 type: "GET",
                 data: {
-                    "$limit": 5,
+                    "$limit": 50,
                 }
             }).done(function(data) {
-                var gresults = data;
-
-								console.log(gresults);
-
-            });
-
+                // var gresults = data;
+				// for loop for finding coordinates
+					for(var i = 0; i < data.results.length; i++){
+						// console.log(gresults);
+						var coords = data.results[i].geometry.location;
+						// console.log(coords);
+						var marker = new google.maps.Marker({
+							position: coords,
+							map: map,
+							// icon: 'images/theft.png',
+						});
+					}
+	            })
         }
     });
 });
 
-
+var theftData = [];
 
 var map; // Google map object (global variable)
 
 // Initialize and display a google map
 function Init() {
     // Create a Google coordinate object for where to center the map
-    var latlngDC = new google.maps.LatLng(30.2672, -97.7431); // Coordinates of Washington, DC (area centroid)
+    var latlngATX = new google.maps.LatLng(30.2672, -97.7431); // Coordinates of Austin, TX (area centroid)
 
     // Map options for how to display the Google map
     var mapOptions = {
         zoom: 12,
-        center: latlngDC
+        center: latlngATX
     };
 
     // Show the Google map in the div with the attribute id 'map-canvas'.
@@ -158,3 +124,52 @@ function Init() {
 		geolocateUser();
 	});
 
+	// Initialize firebase
+
+var config = {
+    apiKey: "AIzaSyCrqXg8Tlrap751-MiLRymevQmJErM8K64",
+    authDomain: "project-1-database-e557d.firebaseapp.com",
+    databaseURL: "https://project-1-database-e557d.firebaseio.com",
+    storageBucket: "project-1-database-e557d.appspot.com",
+    messagingSenderId: "156136916107"
+  };
+  firebase.initializeApp(config);
+
+// Create a variable to reference the database
+
+var database = firebase.database();
+
+
+ $("#bouton").on("click", function() {
+        event.preventDefault()
+
+   		var first_name = $("#first_name").val().trim();
+		var last_name = $("#last_name").val().trim();
+		var password = $("#password").val().trim();
+		var email = $("#email").val().trim();
+		var crime = $("#crime").val().trim();
+       $(".validate").val("");
+
+        database.ref().push({
+          first_name: first_name,
+          last_name: last_name,
+          password: password,
+          email: email,
+          crime: crime
+        });
+
+
+      });
+
+
+database.ref().on("child_added", function(snapshot) {
+
+	var first_name = $("#first_name").val().trim();
+	var last_name = $("#last_name").val().trim();
+	var password = $("#password").val().trim();
+	var email = $("#email").val().trim();
+	var crime = $("#crime").val().trim();
+	 // Handle the errors
+    }, function(errorObject) {
+     console.log("Errors handled: " + errorObject.code);
+    });
