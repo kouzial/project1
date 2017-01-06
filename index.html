@@ -3,11 +3,11 @@
 
 <head>
     <title></title>
-    <link rel="stylesheet" href="style.css">
+    
     <script src="https://code.jquery.com/jquery-2.2.3.js" integrity="sha256-laXWtGydpwqJ8JA+X9x2miwmaiKhn8tVmOVEigRNtP4=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
-
+  <link href="https://fonts.googleapis.com/css?family=Bitter" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Arbutus" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,42 +15,52 @@
     <script src="https://use.fontawesome.com/9ae365d83c.js"></script>
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <meta name="viewport" content="width=device-width">
+     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 
     <script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
 
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <link rel="stylesheet" href="style.css">
     <!-- Google Maps API -->
 
 
 </head>
 
 <body>
-
-
-
-  <nav>
-    <div class="nav-wrapper">
-    <a href="#" class="brand-logo center customlogo">D-TOUR</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
-
+<nav>
+   <div id="headbr" class="nav-wrapper">
+     <a href="#" class="brand-logo left customlogo">D-TOUR</a>
+     <ul id="nav-mobile" class="left hide-on-med-and-down">
       <div id = "sidebar" class="fixed-action-btn horizontal click-to-toggle">
-        <a id = "newbar" class="btn-floating btn-large red">
-          <i class="material-icons">M</i>
+        <a id = "newbar" class="btn-floating btn-large grey "><i class="large material-icons">report_problem</i>
+
+        
         </a>
         <ul>
-          <li class="smallbar"><a class="btn-floating red"><i class="material-icons icon-thing">I</i></a></li>
-          <li class="smallbar"><a class="btn-floating yellow darken-1"><i class="material-icons icon-thing">A</i></a></li>
-          <li class="smallbar"><a class="btn-floating green"><i class="material-icons icon-thing">B</i></a></li>
-          <li class="smallbar"><a class="btn-floating blue"><i class="material-icons icon-thing">X</i></a></li>
+          <li class="smallbar"><a class="btn-floating bcolor white"><img id="gun" src="https://maxcdn.icons8.com/Color/PNG/24/Cinema/crime-24.png" title="Crime" width="30" height="30"></a></li>
+
+          <li class="smallbar"><a class="btn-floating bcolor white"><img id="mask" src="https://maxcdn.icons8.com/iOS7/PNG/25/City/ski_mask_filled-25.png" title="Ski Mask Filled" width="30"></a></li>
+
+          <li class="smallbar"><a class="btn-floating bcolor white"><img id="homeinvasion" class="icon icons8-Burglary" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAADW0lEQVRoQ+Wa8ZEOQRDF30WACBABIkAEZIAI3EWACBABIkAEiMBdBIgAEVA/tVM1t9W73T07+41j/uOb3ek3r/v1m9k7knRf0nNJ13Sxx6mkkyNJX/4BMIWKUwD9utjEnI/+vwAEyBHjeKrleu1nkp46wZzLMIuhUYA+S7o5C/6upI+HBoRKPpZ0Z1qYANhZL5A6ThQWcarHT0mXA6nSlaFXkh4uLBpJl/KolW7vp5biYeoGCGbeOqtFUoZXWOl2IumFh2au0ltqiJS67Sz4qUrFpamk1Xfjx1uSaJbe6MZQtH95IkPKkrr1+JZo9n8doA8Gi29WanPOWDdAkZRbK+wHU4+xPOQjSa+9XJt+7waoRRSoF4Cgamtm+IqkH4cGxHqoED3IGrVsA4R5APF6S0RI6vW6MVReSkPFnhTFIyD+TUpmgPC+s6n3fA2yw7TugKy1SacnicLGFcC259ustXYFlAVCgCgaqRitmd1Urn4xQDj1IhTRQWoCJNI8197ZnSEcMr3EK/YSFOlFM30XRe7M6w7I8mFrMVDw1zuB6S4Klm2JxJppnN77ujKUZacER91gPnuMboDoP9RO64geLbz3dwNkmUpv8fr3jAHdXeUsdlAv3MG9BCrEIeMKdmusOGFM5nzH+f9MGmaO6Uv7tDnlrAsNFiu7TcHfCLKEO+C5VpfQRbaX2CmXJVkpZwOQ8VbHsImhJXbm53/q4mqQpTINc0oKZtnaBAg3jIuuh3V+seZF8AEGtjK2qBkQXo3LwLlns/oJc2DpUgSFMQe1BFhEAZsBWbvOgWx+fVvii7LE/dtS/URuX5sALbHjebKI4m21QS6gxiw591gRCTaCgLMC0RzDXt+HKG5qCzAoI0Ue7U3NYHgQQC0SG1m0BgVT9K+MLYqsMZ9zBiCOzRTwHjsIKIq+XBpaXxlaAreeQaCOvXvnXovV78HYkoKWpG+2QiMAAY4URJKtrNh0ThoFCFBRG5XKkpGArHrKfEYxgY4EZN1HvJzu6lKs1JNHAdol3Uofat6NDQ9aPm9zuo0EZP19UY/j+B+ncOiBO6d+5qPHhckQQNZHsrVjSGrDRzBkpVv0bxJccIcGtGu6jRIF/Frt47LfVFdZOjRDBMM1F3UEKGoHs5q96VkE9RtUFd4yWuh/ygAAAABJRU5ErkJggg==" width="30" height="30"></a></li>
+
+          <li class="smallbar"><a class="btn-floating bcolor white"><img id="burgerly" class="icon icons8-Bank-Robbery-Filled" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADsUlEQVRoQ92ajW0UQQyFXyoAKiCpAKgAqACoAKiAUAFQAVABUAFQQaACkgqACoAKQN/qJvI5nt/bvVthKVK0OzP2s8d+ntk70n8iR3vAcV3SR0n3JH2R9EjS7x31PpH0erPGU0mf9gEEAGfG8FeSXmaAvNgAZs45BkpivBcccnfzkHF3eoG0KrKKPZDPkh4Gxn2TdDt4PhnqntuxPyUd9wDpUWT1srV+mQc/JJ04w4gQTsqJj+JfM/ArUWwF0qvIG0ROXDMPb7g8yTkpTZmMNfOHgfQqKu1p3t3fJH4aZw3LRcU6fRhIryJvzBtJzwoJTx7cKmyt2SLSq8jbdGrKJe98wvds3WNJ3w+VI75yRZUo56wLV82oePBSkreSTluTnUmtiqId4isXY95LgsysEBlAwxEAgEcs57AOnGTL9FTReoCgsKaosM1DRwAEQK0CCFu9LgtHL5BWhdE4v73SmFYwvmBs5do+gaSIRsRXA0Nv9c555w+MnvioBQiDUU6SsUfpc55vcmYkQuz7ByMT3RxsIEqT1IBgOGQIGCswNf0P7UavJGeUeKO2pq9kVSCl+j6VvZrGzHscQxW0bUvPUjiR+ZdSi4htl70iz7Y9hjA2l/y1dUIH1oCUWpMPkkjCXSSqRLX1fMNZzRFIh/zISa3S1AwajUro/FJEopJnjYs8U5oT6erdXtMhKvJQCUgp7LlTXqm0zgEkm5clIKVE9+eJ5CSbU1cqS2avtRwR0tQhICjAGLx8s2XDuzFz5FCz2lxEUqJjDP/bQ1Hr4tHZnHNEuMdbF82MO88BSUmLMWyjEfKiF4LFrbDeSHRrOC9yQGyi09OQL7B8a48ECFi/p0WvGVt8nwPiEx2D+CPZVik5ILlKstcE7vFYBKTE6GF70KNwqbERkBw7X2mdlzJqZN0ISI7RyRsq2ColAlK6Vcwx+sHBRUCWbt0XAe2BtHSj3KSPHHEXAZAW9UBqV5fM2+WIuxgYD6TlhoOLB6Ky6+ezWUF5IHyQsf0RrQYG+/5o6ypmVosGF7NA/C03S3KAIkr+cizqbAdNmGeaBRIRYWpJokPWqtoVCyQiwtSSRNVsVQRpgXgi9C1JFJXVEKQF4onQJ3SUQ3Pcbc2SJAlItHUi4uNM8thpXgVBJiCeCHP3R5RmKpa9s10FQSYgnghLxnnQqyDIBMQTYelOKorKwUtxAmJvN6LbD5+QnnP4xQ9RPZjYZE83HnyZ2vr2kLEO3kk/XRr9TjIb8NpnhdkULb3QP6LG3tIBIHNaAAAAAElFTkSuQmCC" width="30" height="30"></a></li>
         </ul>
       </div>
+     </ul>
+   </div>
+ </nav>
+ 
+
+
+  
 
       </ul>
     </div>
   </nav>
  <div class="input-group">
  <span class="input-group-addon" id="locatorIcon"><i class="fa fa-location-arrow" aria-hidden="true"></i></i></span>
- <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+ <input type="text" class="form-control white" aria-label="Amount (to the nearest dollar)">
  <span class="input-group-addon"><i class="fa fa-search" aria-hidden="true"></i></i></span>
 </div>
 <div class="row">
@@ -64,7 +74,7 @@
         <div class="col-md-4 austininput">
             <div class="thumbnail">
                 <img src="austinskyline.jpg" alt="austin">
-                <div class="caption">
+                <div class="caption thumbpad">
                     <h3 id="hthree">Report a Crime</h3>
                     
                      <div class="row">

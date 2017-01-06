@@ -1,67 +1,107 @@
-
 /* style settings for Google map */
-	#map-canvas
-	{
-		width : 1200px; 	/* map width */
-		height: 900px;	/* map height */
-		margin-top: 20px;
 
-	}
-	#mapbod
-	 {
-		display: flex;
-		justify-content: center;
-
-	}
-	.customlogo{
-		font-family: 'Arbutus', cursive;
-		margin-right:25px;
-	}
-  body {
+#map-canvas {
+    width: 1200px;
+    /* map width */
+    
+    height: 900px;
+    /* map height */
+    
+    margin-top: 20px;
+}
+#mapbod {
+    display: flex;
+    justify-content: center;
+}
+.customlogo {
+    font-family: 'Arbutus', cursive;
+    margin-right: 25px;
+    padding-bottom: 15px;
+    font-size: 30px;
+}
+body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-  }
-
-  main {
+    background-image: url("http://www.myfreetextures.com/wp-content/uploads/2011/06/brushedsteel3.jpg");
+}
+main {
     flex: 1 0 auto;
-  }
-  .austininput{
-  	padding-top:17px;
-  }
-
-  #sidebar {
-  	position: absolute;
-  }
-
+}
+.austininput {
+    padding-top: 17px;
+}
+#sidebar {
+    position: absolute;
+}
 #newbar {
-	margin-top: 10px;
-	position: relative;
-	top: 1.2em;
+    margin-top: 10px;
+    position: relative;
+    top: 1.2em;
 }
-
 .smallbar {
-	position: relative;
-	left: 10em;
-	top: 1em;
+    position: relative;
+    left: 10em;
+    top: 1em;
 }
-
 .icon-thing {
-	position: relative;
-	bottom: 10px;
+    position: relative;
+    bottom: 10px;
 }
-
 .footer-nav {
-	padding: 20px;
-	background: #ee6e73;
-	text-align: center;
-	font-size: 20px;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Bitter', serif;
+    color: lightgrey;
+    background-image: url("http://borealforest.travel/wp-content/uploads/2015/02/footer-graphic.png");
 }
-
 #bouton {
-	margin-left: 120px;
+    margin-left: 120px;
 }
-
 #hthree {
-	text-align: center;
+    text-align: center;
+}
+#logobr {
+    color: purple;
+}
+#pad {
+    padding-bottom: 15px;
+}
+h2 {
+    padding-left: 15px;
+    position: fixed;
+}
+.customlogo {
+    margin: 10px;
+    margin-bottom: 10px;
+}
+.bcolor {
+    background-image: url("https://icons8.com/web-app/36671/ski-mask");
+    opacity: 0.1;
+}
+#gun {
+    padding-right: 5px;
+}
+#mask {
+    padding-right: 8px;
+}
+#homeinvasion {
+    padding-right: 8px;
+}
+#burgerly {
+    padding-right: 8px;
+}
+#footerfont {
+    font-family: 'Bitter', serif;
+}
+#headbr {
+    background-image: url("http://borealforest.travel/wp-content/uploads/2015/02/footer-graphic.png");
+}
+.white {
+    background: white;
+}
+.thumbnail .caption {
+    padding: 26px;
+    color: #333;
 }
