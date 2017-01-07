@@ -80,13 +80,14 @@ h2 {
     background-image: url("https://icons8.com/web-app/36671/ski-mask");
     opacity: 0.1;
 }
-#gun {
-    padding-right: 5px;
-}
-#mask {
+#theft {
     padding-right: 8px;
 }
-#homeinvasion {
+#dwi {
+    padding-right: 8px;
+
+}
+#assault {
     padding-right: 8px;
 }
 #burgerly {
@@ -99,9 +100,9 @@ h2 {
     background-image: url("http://borealforest.travel/wp-content/uploads/2015/02/footer-graphic.png");
 }
 .white {
-    background: white;
+    background: #dadad9;
 }
 .thumbnail .caption {
-    padding: 26px;
+    padding: 24px;
     color: #333;
 }
