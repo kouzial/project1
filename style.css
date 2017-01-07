@@ -23,7 +23,7 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
-    background-image: url("http://www.myfreetextures.com/wp-content/uploads/2011/06/brushedsteel3.jpg");
+    background-image: url("https://www.myfreetextures.com/wp-content/uploads/2011/06/brushedsteel3.jpg");
 }
 main {
     flex: 1 0 auto;
@@ -54,7 +54,7 @@ main {
     font-size: 20px;
     font-family: 'Bitter', serif;
     color: lightgrey;
-    background-image: url("http://borealforest.travel/wp-content/uploads/2015/02/footer-graphic.png");
+    background-image: url("https://borealforest.travel/wp-content/uploads/2015/02/footer-graphic.png");
 }
 #bouton {
     margin-left: 120px;
@@ -97,7 +97,7 @@ h2 {
     font-family: 'Bitter', serif;
 }
 #headbr {
-    background-image: url("http://borealforest.travel/wp-content/uploads/2015/02/footer-graphic.png");
+    background-image: url("https://borealforest.travel/wp-content/uploads/2015/02/footer-graphic.png");
 }
 .white {
     background: #dadad9;
