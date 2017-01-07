@@ -19,9 +19,9 @@ $.ajax({
         var crime = data[i].crime_type;
         if(crime === 'THEFT'||crime === 'THEFT FROM PERSON'||crime === 'THEFT BY SHOPLIFTING'|| crime === 'AUTO THEFT'|| crime === 'THEFT OF BICYCLE'|| crime === 'THEFT OF AUTO PARTS'|| crime === 'THEFT FROM AUTO'){
          theftData.push(data[i]);
-        }else if(crime === 'ASSAULT'|| crime === 'ASSAULT WITH INJURY'|| crime === 'ASSAULT BY THREAT' || crime === 'ASSAULT  CONTACT-SEXUAL NATURE' || crime === 'ASSAULT BY CONTACT FAM/DATING'|| crime === 'ASSAULT W/INJURY-FAM/DATE VIOL'){
+        }else if(crime === 'ASSAULT'|| crime === 'ASSAULT WITH INJURY'|| crime === 'ASSAULT BY THREAT' || crime === 'ASSAULT  CONTACT-SEXUAL NATURE' || crime === 'ASSAULT BY CONTACT FAM/DATING'|| crime === 'ASSAULT W/INJURY-FAM/DATE VIOL' || crime === 'ASSAULT INFO (FAMILY VIOLENCE' || crime === 'ASSAULT BY CONTACT' || crime === 'ASSAULT INFORMATION' || crime === 'AGG ASSAULT FAM/DATE VIOLENCE' || crime === 'SEXUAL ASSAULT W/ OBJECT'){
             assaultData.push(data[i]);
-        }else if(crime === 'DWI DWI  .15 BAC OR ABOVE'|| crime === 'DWI'){
+        }else if(crime === 'DWI DWI  .15 BAC OR ABOVE'|| crime === 'DWI' || crime === 'DWI 2ND' || crime === 'DWI - DRUG RECOGNITION EXPERT'){
           dwiData.push(data[i]);
                     }
     }
